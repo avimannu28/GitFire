@@ -18,7 +18,7 @@ function Header() {
        <NavbarText className='text-white'>{
         context.user?.email?context.user.email:""
        }</NavbarText>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler onClick={toggle} style={{backgroundColor:"white"}} />
         <Collapse isOpen={isOpen} navbar>
             <Nav  className='ml-auto' navbar>
             {
