@@ -34,9 +34,9 @@ function Home() {
         }
 
     }
-    if(!context.user?.email){
-      return(<Navigate to="/signin"></Navigate>)
-    }
+    // if(!context.user?.email){
+    //   return(<Navigate to="/signin"></Navigate>)
+    // }
   return (
     <Container>
       <Row className=" mt-3">
