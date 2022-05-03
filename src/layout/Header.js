@@ -2,7 +2,8 @@ import React,{useState,useContext} from 'react'
 import { Link } from 'react-router-dom'
 import  UserContext  from '../context/UserContext'
 // import "bootstrap/dist/css/bootstrap.min.css"
-import {Collapse,Navbar,NavbarToggler,NavbarBrand,Nav,NavItem,NavLink,NavbarText} from "reactstrap"
+import {Collapse,Navbar,NavbarToggler,NavbarBrand,Nav,NavItem,NavLink,NavbarText,Button} from "reactstrap"
+// import { Button } from 'bootstrap'
 
 function Header() {
     const context=useContext(UserContext)
@@ -11,21 +12,27 @@ function Header() {
     const toggle=()=>{
         setIsOpen(!isOpen)
     }
+    const remove=()=>{
+        localStorage.removeItem("user")
+        context.setUser(null)
+        window.location.reload()
+        
+    }
 
     return (
        <Navbar color='black' light expand="md" >
        <NavbarBrand><Link to="/" className='text-white'>GithHub Firebase</Link></NavbarBrand>
        <NavbarText className='text-white'>{
-        context.user?.email?context.user.email:""
+        localStorage.getItem("user")?localStorage.getItem("user"):""
        }</NavbarText>
         <NavbarToggler onClick={toggle} style={{backgroundColor:"white"}} />
         <Collapse isOpen={isOpen} navbar>
             <Nav  className='ml-auto' navbar>
             {
-                context.user?.email?(<NavItem> 
-                    <NavLink onClick={()=>{context.setUser(null)}} className='text-white'>
+                localStorage.getItem("user")?(<NavItem> 
+                    <Button onClick={remove} className='text-white'>
                         Logout
-                    </NavLink>
+                    </Button>
                 </NavItem>):( 
                 <>
                 <NavItem> 

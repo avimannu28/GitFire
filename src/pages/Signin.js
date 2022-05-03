@@ -74,7 +74,7 @@ function Signin() {
 								</FormGroup>
 							</CardBody>
 							<CardFooter>
-								<Button type='submit' block color='primary'>
+								<Button type='submit' block color='primary' onClick={e=>localStorage.setItem('user',email)}>
 									Sign In
 								</Button>
 							</CardFooter>

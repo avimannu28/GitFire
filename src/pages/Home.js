@@ -34,7 +34,8 @@ function Home() {
         }
 
     }
-    if(!context.user?.email){
+    localStorage.getItem("user")
+    if(!localStorage.getItem("user")){
       return(<Navigate to="/signin"></Navigate>)
     }
   return (
