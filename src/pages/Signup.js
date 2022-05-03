@@ -35,12 +35,12 @@ function Signup() {
     }
 
    return (
-		<Container className='text-center'>
+		<Container className='text-center' >
 			<Row>
 				<Col lg={6} className='offset-lg-3 mt-5'>
 					<Card>
 						<Form onSubmit={handelSubmit}>
-							<CardHeader className=''>SignUp here</CardHeader>
+							<CardHeader className='' style={{backgroundColor:"yellow"}}>SignUp here</CardHeader>
 							<CardBody>
 								<FormGroup row>
 									<Label for='email' sm={3}>
