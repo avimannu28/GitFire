@@ -58,21 +58,6 @@ function Signup() {
 									</Col>
 								</FormGroup>
 								<FormGroup row>
-									<Label for='name' sm={3}>
-										Name
-									</Label>
-									<Col sm={9}>
-										<Input
-											type='text'
-											name='name'
-											id='name'
-											placeholder='provide your name'
-											// value={email}
-											// onChange={e => setEmail(e.target.value)}
-										/>
-									</Col>
-								</FormGroup>
-								<FormGroup row>
 									<Label for='password' sm={3}>
 										Password
 									</Label>
